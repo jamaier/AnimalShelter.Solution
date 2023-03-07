@@ -8,4 +8,4 @@ namespace AnimalShelter.Models
 
     public AnimalShelterContext(DbContextOptions options) : base(options) { }
   }
-}
+}                                                                                     

@@ -7,7 +7,7 @@ namespace AnimalShelter.Controllers
 {
   public class AnimalsController : Controller
   {
-    private readonly AnimalsShelterContext _db;
+    private readonly AnimalShelterContext _db;
 
     public AnimalsController(AnimalShelterContext db)
     {
@@ -35,7 +35,7 @@ namespace AnimalShelter.Controllers
 
     public ActionResult Details(int id)
     {
-      Animal thisAnimal = _db.Animals.FirstOfDefault(Animal => animal.AnimalId ==Id);
+      Animal thisAnimal = _db.Animals.FirstOrDefault(animal => animal.AnimalId == id);
       return View(thisAnimal);
     }
 
