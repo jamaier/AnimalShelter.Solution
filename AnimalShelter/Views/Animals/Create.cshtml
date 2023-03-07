@@ -2,7 +2,7 @@
   Layout = "_Layout";
 }
 
-   @model AnimalShelter.Models.Animal
+@model AnimalShelter.Models.Animal
 
 <h4>Add a new animal</h4>
 @using (Html.BeginForm())
@@ -12,7 +12,8 @@
   @Html.LabelFor(model => model.Name)
   @Html.TextBoxFor(model => model.Name)
   @Html.LabelFor(model => model.ArrivalDate)
-  @Html.TextBoxFor(model => model.ArrivalDate)
+  // No need for the {yyyy-MM-dd} format or the @ in front of the type="date"
+  @Html.TextBoxFor(model => model.ArrivalDate, new { @class = "form-control", type = "date" })
 
   <input type="submit" value="Add new animal" />
 }
