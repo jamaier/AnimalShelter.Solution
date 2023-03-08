@@ -5,17 +5,21 @@
 @model AnimalShelter.Models.Animal
 
 <h4>Add a new animal</h4>
+
 @using (Html.BeginForm())
 {
+  <br>
   @Html.LabelFor(model => model.Name)
-  @Html.TextBoxFor(model => model.Name, new { @class = "form-control", placeholder = "short name", required="required"})
-  @Html.LabelFor(model => model.Description)
-  @Html.TextBoxFor(model => model.Description, new { @class = "form-control", placeholder = "short description", required="required"})
-  @Html.LabelFor(model => model.ArrivalDate)
+  @Html.TextBoxFor(model => model.Name, new { @class = "form-control", placeholder = "Animal Name", required="required"})
+  <br>
+  @Html.LabelFor(model => model.Description, "Breed")
+  @Html.TextBoxFor(model => model.Description, new { @class = "form-control", placeholder = "Type", required="required"})
+  <br>
+  @Html.LabelFor(model => model.ArrivalDate, "Arrival Date")
   // No need for the {yyyy-MM-dd} format or the @ in front of the type="date"
   @Html.TextBoxFor(model => model.ArrivalDate, new { @class = "form-control", type = "date" })
-
+  <br>
   <input type="submit" value="Add new animal" />
 }
-
+<br>
 <p>@Html.ActionLink("Show all animals", "Index")</p>
